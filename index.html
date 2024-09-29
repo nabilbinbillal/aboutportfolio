@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            font-size: 20px;
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            display: none; /* Hide iframe initially */
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">Loading...</div>
+    <iframe id="myIframe" src="http://127.0.0.1:8081/dl/index.html" onload="iframeLoaded()"></iframe>
+
+    <script>
+        const loader = document.getElementById('loader');
+        const iframe = document.getElementById('myIframe');
+
+        // Show loader while the iframe is loading
+        loader.style.display = 'block';
+
+        function iframeLoaded() {
+            loader.style.display = 'none'; // Hide loader when iframe is loaded
+            iframe.style.display = 'block'; // Show the iframe
+        }
+    </script>
+</body>
+</html>
