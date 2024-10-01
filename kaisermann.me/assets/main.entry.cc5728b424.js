@@ -929,36 +929,26 @@ class te extends W {
 
 function ee(e) {
     let n, c, r;
-    
-    const spaceTriggers = document.querySelectorAll('.js-space-trigger'); // Select all space triggers
-
     return {
         c() {
-            n = document.createElement("button");
+            n = m("button");
             n.textContent = "SPACE MODE";
-            n.classList.add("cursor-pointer", "svelte-6brq6f", "visible-button"); // Added visible-button class for custom styling
+            y(n, "class", "cursor-pointer svelte-6brq6f visible-button"); // Added visible-button class for custom styling
         },
         m(t, e) {
-            spaceTriggers.forEach(trigger => {
-                trigger.appendChild(n.cloneNode(true)); // Clone the button for each trigger
-            });
-            c || (r = n.addEventListener("click", At), c = !0);
+            d(t, n, e);
+            c || (r = g(n, "click", At), c = !0);
         },
         p: t,
         i: t,
         o: t,
         d(t) {
-            if (t) {
-                spaceTriggers.forEach(trigger => {
-                    trigger.removeChild(n); // Remove button from each trigger
-                });
-            }
+            t && f(n);
             c = !1;
             r();
         }
     }
 }
-
 
 class ne extends W {
     constructor(t) {
