@@ -352,6 +352,9 @@ I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science"
 
 
 
+
+
+
 <div class="email-container" style="text-align: center; margin-top: 20px;">
   <p style="font-size: 18px; color: #fff;">
     If you'd like to collaborate or chat, feel free to reach me by 
@@ -381,15 +384,21 @@ I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science"
         copyButton.textContent = 'Copy Email Address';  // Revert the button text back to "Copy Email Address" after 2 seconds
       }, 2000);
 
-      const successMessage = document.createElement('p');
-      successMessage.textContent = 'Email Copied Successfully!';
-      successMessage.style.color = '#fff';
-      successMessage.style.marginTop = '10px';
-      document.querySelector('.email-container').appendChild(successMessage);
+      // Check if a success message already exists
+      const existingMessage = document.querySelector('.success-message');
+      if (!existingMessage) {
+        const successMessage = document.createElement('p');
+        successMessage.textContent = 'Email Copied Successfully!';
+        successMessage.style.color = '#fff';
+        successMessage.style.marginTop = '10px';
+        successMessage.classList.add('success-message');
+        document.querySelector('.email-container').appendChild(successMessage);
 
-      setTimeout(() => {
-        successMessage.remove();  // Remove the success message after 2 seconds
-      }, 2000);
+        // Remove the success message after 2 seconds
+        setTimeout(() => {
+          successMessage.remove();
+        }, 2000);
+      }
     });
   });
 </script>
@@ -419,6 +428,12 @@ I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science"
       0 0.2em 0 0 #dcdcdc, 0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
   }
 </style>
+
+
+
+
+
+
 
 <footer class="footer" id="footer" style="margin-bottom: 30px;">
   <ul class="link-list">
