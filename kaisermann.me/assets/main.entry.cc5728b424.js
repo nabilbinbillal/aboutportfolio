@@ -1191,7 +1191,7 @@ const Ne = () => {
         new Xt({ target: document.querySelector(".js-remote") });
         new te({ target: document.querySelector(".js-header-controls") });
         new ne({ target: document.querySelector(".js-space-trigger") }); // Existing trigger
-        new ee2({ target: document.querySelector("#js-space-trigger2") }); // New trigger
+        new ee2({ target: document.querySelector("js-space-trigger2") }); // New trigger
     });
 };
 
