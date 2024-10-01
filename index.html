@@ -329,7 +329,20 @@
     <meta name="yandex-verification" content="296b91393da2610d" />
 
 
+    <script>
+        WebFontConfig = {
+            google: { families: ['Michroma'] }
+        };
 
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
 
     <!-- Styles -->
     <style>
@@ -432,7 +445,7 @@
             <div class="logo-name">NABIL</div>
         </div>
     </div>
-    <iframe src="src/dl/index.html" onload="document.body.classList.add('loaded');"></iframe>
+<iframe src="src/dl/index.html" title="About - Nabil Bin Billal" onload="document.body.classList.add('loaded');"></iframe>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
