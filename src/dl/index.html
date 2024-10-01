@@ -349,85 +349,58 @@
 <br><br>
 I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science" target="_blank">Science</a> group at <a href="https://bgc.edu.bd/" target="_blank">Brahmanbaria Govt. College</a>
 <br><br>
-       <div class="email-container">
-    <p>If you'd like to collaborate or chat, feel free to reach me by <a href="mailto:nabilbinbillal@gmail.com">e-mail</a>.</p>
-    <div class="email-box">
-      nabilbinbillal@gmail.com
-      <button class="copy-button" id="copyButton">Copy Email Address</button>
-    </div>
+<div class="email-container" style="text-align: center; margin-top: 20px;">
+  <p style="font-size: 18px; color: #333;">
+    If you'd like to collaborate or chat, feel free to reach me by <a href="mailto:nabilbinbillal@gmail.com" style="color: #007BFF; text-decoration: none;">e-mail</a>.
+  </p>
+  <div class="email-box" style="display: inline-block; padding: 15px 25px; border: 2px solid #000; border-radius: 5px; margin-top: 10px; background-color: #fff; font-size: 20px; color: #000;">
+    nabilbinbillal@gmail.com
   </div>
+  <button class="copy-button" id="copyButton" style="display: inline-block; margin-left: 10px; padding: 10px 15px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: all 0.3s ease;">
+    Copy Email Address
+  </button>
+</div>
 
-  <script>
-    const copyButton = document.getElementById('copyButton');
-    const emailText = 'nabilbinbillal@gmail.com';
+<script>
+  const copyButton = document.getElementById('copyButton');
+  const emailText = 'nabilbinbillal@gmail.com';
 
-    copyButton.addEventListener('click', function() {
-      navigator.clipboard.writeText(emailText).then(function() {
-        copyButton.classList.add('glitch');
-        setTimeout(() => {
-          copyButton.classList.remove('glitch');
-        }, 300);
-      });
+  copyButton.addEventListener('click', function() {
+    navigator.clipboard.writeText(emailText).then(function() {
+      copyButton.classList.add('glitch');
+      setTimeout(() => {
+        copyButton.classList.remove('glitch');
+      }, 300);
     });
-  </script>
-
-
-
+  });
+</script>
 
 <style>
-    .email-container {
-      text-align: center;
-    }
+  .copy-button.glitch {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    animation: glitch 0.2s;
+  }
 
-    .email-box {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid #000;
-      border-radius: 5px;
-      margin-top: 10px;
-      background-color: #fff;
-      font-size: 16px;
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
     }
-
-    .copy-button {
-      display: inline-block;
-      margin-left: 10px;
-      padding: 10px 15px;
-      background-color: #000;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: all 0.3s ease;
+    25% {
+      transform: translate(2px, 2px);
     }
-
-    .copy-button.glitch {
-      background-color: #fff;
-      color: #000;
-      border: 2px solid #000;
-      animation: glitch 0.2s;
+    50% {
+      transform: translate(-2px, -2px);
     }
-
-    @keyframes glitch {
-      0% {
-        transform: translate(0);
-      }
-      25% {
-        transform: translate(2px, 2px);
-      }
-      50% {
-        transform: translate(-2px, -2px);
-      }
-      75% {
-        transform: translate(2px, -2px);
-      }
-      100% {
-        transform: translate(0);
-      }
+    75% {
+      transform: translate(2px, -2px);
     }
-  </style>
-
+    100% {
+      transform: translate(0);
+    }
+  }
+</style>
     </p>
   </article>
 </div>
