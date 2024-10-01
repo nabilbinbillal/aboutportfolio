@@ -883,18 +883,19 @@ button.svelte-zwh9ot:before{
     width:60px;
     height:60px
 }
+
 /* Base styles for the button */
 button.svelte-6brq6f {
     font-family: var(--font-primary);
     -webkit-appearance: none;
     appearance: none;
-    background-color: transparent;
+    background-color: white; /* Set background color to white */
     border: none;
     padding: 0.5em 1em; /* Add some padding for better click area */
     border-radius: 8px; /* Smooth corners */
     opacity: 1; /* Changed to 1 for visibility */
     transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease; /* Added background-color transition */
-    color: #fff;
+    color: #333; /* Set text color to a dark color for contrast */
     font-size: 1rem;
     cursor: pointer; /* Ensure the cursor indicates it's clickable */
 }
@@ -902,20 +903,9 @@ button.svelte-6brq6f {
 /* Hover effect for the button */
 button.svelte-6brq6f:hover {
     opacity: 1;
-    background-image: url(images/stars.jpg);
-    background-size: cover; /* Changed to cover for better fit */
-    background-repeat: no-repeat;
+    background-color: #f0f0f0; /* Light gray background on hover */
     transform: scale(1.05); /* Slightly scale the button on hover */
-    color: #d8d8d8; /* Change text color on hover */
-}
-
-/* Additional hover effects for different image formats */
-html.webp button.svelte-6brq6f:hover {
-    background-image: url(images/stars.webp);
-}
-
-html.avif button.svelte-6brq6f:hover {
-    background-image: url(images/stars.avif);
+    color: #666; /* Change text color on hover */
 }
 
 /* Active state for button */
