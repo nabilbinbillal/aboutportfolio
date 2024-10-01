@@ -950,6 +950,10 @@ function ee(e) {
     }
 }
 
+
+
+
+
 class ne extends W {
     constructor(t) {
         super(), V(this, t, null, ee, o, {})
@@ -1129,32 +1133,69 @@ function ke(t) {
     const e = Number(t.key);
     Number.isNaN(e) || (e === i(dt) ? $t(0) : $t(e))
 }
+
+
+
+function ee2(e) {
+    let n, c, r;
+
+    return {
+        c() {
+            n = document.createElement("button"); // Create button element
+            n.textContent = "SPACE MODE 2"; // Change text for clarity
+            n.classList.add("cursor-pointer", "svelte-6brq6f", "visible-button"); // Add classes for styling
+        },
+        m(t, e) {
+            t.appendChild(n); // Append button to the target element
+            c || (r = n.addEventListener("click", At), c = !0); // Add click event listener
+        },
+        p: t,
+        i: t,
+        o: t,
+        d(t) {
+            if (t) {
+                n.remove(); // Remove button from DOM
+            }
+            c = !1; // Reset the flag
+            r(); // Remove event listener
+        }
+    }
+}
+
+
+
+
+
+
+
 const Ne = () => {
-    Q((() => {
-        Ae(), window.addEventListener("contentChange", Ae), window.addEventListener("keyup", ke), window.addEventListener("popstate", (async t => {
-            let {
-                state: e
-            } = t;
+    Q(() => {
+        Ae(), window.addEventListener("contentChange", Ae), window.addEventListener("keyup", ke), window.addEventListener("popstate", async (t) => {
+            let { state: e } = t;
             if (Z.pathname === ue) return t.preventDefault(), void ge();
-            ue = Z.pathname, null == e && (e = se), pt.set(ct), await et(300), pt.set(rt), Q((() => {
-                me(e), document.title = e.title, ge()
-            }))
-        })), Y.addEventListener("mousemove", (t => {
-            fe(t.target) && (oe.has(t.target.href) || he(t.target.href, {
-                importante: "low"
-            }))
-        })), Y.addEventListener("click", (t => {
+            ue = Z.pathname, null == e && (e = se), pt.set(ct), await et(300), pt.set(rt), Q(() => {
+                me(e), document.title = e.title, ge();
+            });
+        });
+
+        Y.addEventListener("mousemove", (t) => {
+            fe(t.target) && (oe.has(t.target.href) || he(t.target.href, { importante: "low" }));
+        });
+
+        Y.addEventListener("click", (t) => {
             if (de(t.target)) return t.preventDefault(), Z.hash = t.target.getAttribute("href"), ge();
-            fe(t.target) && (t.preventDefault(), ve(t.target.href))
-        })), new Wt({
-            target: it
-        }), new Xt({
-            target: document.querySelector(".js-remote")
-        }), new te({
-            target: document.querySelector(".js-header-controls")
-        }), new ne({
-            target: document.querySelector(".js-space-trigger")
-        })
-    }))
+            fe(t.target) && (t.preventDefault(), ve(t.target.href));
+        });
+
+        new Wt({ target: it });
+        new Xt({ target: document.querySelector(".js-remote") });
+        new te({ target: document.querySelector(".js-header-controls") });
+        new ne({ target: document.querySelector(".js-space-trigger") }); // Existing trigger
+        new ee2({ target: document.querySelector("#js-space-trigger2") }); // New trigger
+    });
 };
+
 "interactive" !== document.readyState ? window.addEventListener("DOMContentLoaded", Ne) : Ne();
+
+
+
