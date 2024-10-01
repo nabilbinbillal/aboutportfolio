@@ -883,31 +883,33 @@ button.svelte-zwh9ot:before{
     width:60px;
     height:60px
 }
-
-.svelte-6brq6f {
+/* Base styles for the button */
+button.svelte-6brq6f {
     font-family: var(--font-primary);
     -webkit-appearance: none;
     appearance: none;
     background-color: transparent;
     border: none;
-    padding: 0;
+    padding: 0.5em 1em; /* Add some padding for better click area */
+    border-radius: 8px; /* Smooth corners */
     opacity: 1; /* Changed to 1 for visibility */
-    transition: opacity 0.3s ease, transform 0.2s ease; /* Added transform transition */
+    transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease; /* Added background-color transition */
     color: #fff;
     font-size: 1rem;
     cursor: pointer; /* Ensure the cursor indicates it's clickable */
 }
 
+/* Hover effect for the button */
 button.svelte-6brq6f:hover {
     opacity: 1;
     background-image: url(images/stars.jpg);
     background-size: cover; /* Changed to cover for better fit */
     background-repeat: no-repeat;
     transform: scale(1.05); /* Slightly scale the button on hover */
-    color: #d8d8d8;
-
+    color: #d8d8d8; /* Change text color on hover */
 }
 
+/* Additional hover effects for different image formats */
 html.webp button.svelte-6brq6f:hover {
     background-image: url(images/stars.webp);
 }
@@ -916,10 +918,12 @@ html.avif button.svelte-6brq6f:hover {
     background-image: url(images/stars.avif);
 }
 
+/* Active state for button */
 button.svelte-6brq6f:active {
     transform: scale(0.95); /* Scale down slightly on click */
 }
 
+/* Visibility settings for the button */
 body.hide-content button.svelte-6brq6f {
     visibility: visible;
 }
