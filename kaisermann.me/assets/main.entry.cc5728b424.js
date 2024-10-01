@@ -860,7 +860,7 @@ function Kt(e) {
         c() {
             n = m("div"), r = m("div"), o = m("div"), s = m("div"), i = m("div"), l = m("div"), a = m("button"), a.textContent = "REMOTE\n              OFF", h = v(), $ = m("span"), $.textContent = "SPACE OFF", b = v(), w = m("div"), x = m("button"), x.textContent = "▲", E = v(), C = m("div"), A = m("button"), A.textContent = "▼", k = v(), N = m("span"), N.textContent = "VOLUME", S = v(), T = m("div"), j = m("button"), j.textContent = "MUTE", L = v(), _ = m("span"), _.textContent = "MUTE", O = v(), M = m("div"), q = m("button"), q.textContent = "▲", D = v(), F = m("div"), P = m("button"), P.textContent = "▼", H = v(), B = m("span"), B.textContent = "CHANNEL", R = v(), U = m("div");
             for (let t = 0; t < tt.length; t += 1) tt[t].c();
-            z = v(), I = m("div"), V = m("button"), V.textContent = "0", W = v(), J = m("div"), G = m("button"), G.textContent = "SHOW/HIDE", K = v(), Q = m("div"), Q.innerHTML = '<img loading="lazy" src="#" alt="" width="103" height="10" class="svelte-1vrpccc"/> \n          <br/> \n          <span>COMPUTER SPACE COMMAND</span>', y(a, "class", "hide-text svelte-1vrpccc"), y($, "class", "svelte-1vrpccc"), y(l, "class", "control onoff svelte-1vrpccc"), y(x, "class", "svelte-1vrpccc"), y(w, "class", "control vol up svelte-1vrpccc"), y(A, "class", "svelte-1vrpccc"), y(N, "class", "svelte-1vrpccc"), y(C, "class", "control vol down svelte-1vrpccc"), y(j, "class", "hide-text svelte-1vrpccc"), y(_, "class", "svelte-1vrpccc"), y(T, "class", "control mute svelte-1vrpccc"), y(q, "class", "svelte-1vrpccc"), y(M, "class", "control ch up svelte-1vrpccc"), y(P, "class", "svelte-1vrpccc"), y(B, "class", "svelte-1vrpccc"), y(F, "class", "control ch down svelte-1vrpccc"), y(V, "class", "svelte-1vrpccc"), y(I, "class", "control number svelte-1vrpccc"), y(G, "class", "showhide svelte-1vrpccc"), y(J, "class", "control showhide svelte-1vrpccc"), y(U, "class", "numbers svelte-1vrpccc"), y(i, "class", "buttons svelte-1vrpccc"), y(Q, "class", "brand svelte-1vrpccc"), y(s, "class", "inner svelte-1vrpccc"), y(o, "class", "remote svelte-1vrpccc"), y(r, "class", "wrapper svelte-1vrpccc"), y(n, "class", "perspective svelte-1vrpccc")
+            z = v(), I = m("div"), V = m("button"), V.textContent = "0", W = v(), J = m("div"), G = m("button"), G.textContent = "SHOW/HIDE", K = v(), Q = m("div"), Q.innerHTML = '<img loading="lazy" src="https://kaisermann.me/assets/images/kiwivision.svg" alt="" width="103" height="10" class="svelte-1vrpccc"/> \n          <br/> \n          <span>COMPUTER SPACE COMMAND</span>', y(a, "class", "hide-text svelte-1vrpccc"), y($, "class", "svelte-1vrpccc"), y(l, "class", "control onoff svelte-1vrpccc"), y(x, "class", "svelte-1vrpccc"), y(w, "class", "control vol up svelte-1vrpccc"), y(A, "class", "svelte-1vrpccc"), y(N, "class", "svelte-1vrpccc"), y(C, "class", "control vol down svelte-1vrpccc"), y(j, "class", "hide-text svelte-1vrpccc"), y(_, "class", "svelte-1vrpccc"), y(T, "class", "control mute svelte-1vrpccc"), y(q, "class", "svelte-1vrpccc"), y(M, "class", "control ch up svelte-1vrpccc"), y(P, "class", "svelte-1vrpccc"), y(B, "class", "svelte-1vrpccc"), y(F, "class", "control ch down svelte-1vrpccc"), y(V, "class", "svelte-1vrpccc"), y(I, "class", "control number svelte-1vrpccc"), y(G, "class", "showhide svelte-1vrpccc"), y(J, "class", "control showhide svelte-1vrpccc"), y(U, "class", "numbers svelte-1vrpccc"), y(i, "class", "buttons svelte-1vrpccc"), y(Q, "class", "brand svelte-1vrpccc"), y(s, "class", "inner svelte-1vrpccc"), y(o, "class", "remote svelte-1vrpccc"), y(r, "class", "wrapper svelte-1vrpccc"), y(n, "class", "perspective svelte-1vrpccc")
         },
         m(t, c) {
             d(t, n, c), u(n, r), u(r, o), u(o, s), u(s, i), u(i, l), u(l, a), u(l, h), u(l, $), u(i, b), u(i, w), u(w, x), u(i, E), u(i, C), u(C, A), u(C, k), u(C, N), u(i, S), u(i, T), u(T, j), u(T, L), u(T, _), u(i, O), u(i, M), u(M, q), u(i, D), u(i, F), u(F, P), u(F, H), u(F, B), u(i, R), u(i, U);
@@ -931,19 +931,25 @@ function ee(e) {
     let n, c, r;
     return {
         c() {
-            n = m("button"), n.textContent = "SPACE MODE", y(n, "class", "cursor-pointer svelte-6brq6f")
+            n = m("button");
+            n.textContent = "SPACE MODE";
+            y(n, "class", "cursor-pointer svelte-6brq6f visible-button"); // Added visible-button class for custom styling
         },
         m(t, e) {
-            d(t, n, e), c || (r = g(n, "click", At), c = !0)
+            d(t, n, e);
+            c || (r = g(n, "click", At), c = !0);
         },
         p: t,
         i: t,
         o: t,
         d(t) {
-            t && f(n), c = !1, r()
+            t && f(n);
+            c = !1;
+            r();
         }
     }
 }
+
 class ne extends W {
     constructor(t) {
         super(), V(this, t, null, ee, o, {})
