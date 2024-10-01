@@ -900,7 +900,7 @@ button.svelte-6brq6f {
 }
 
 /* Hover effect for the button */
-button.svelte-6brq6f.hovered {
+button.svelte-6brq6f:hover {
     background-color: #484848; /* Dark background when hovered or active */
     color: #ffffff; /* Change text color on hover */
 }
