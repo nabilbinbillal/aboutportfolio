@@ -350,6 +350,25 @@
 
     <!-- Styles -->
     <style>
+/* Custom font with font-display */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'),
+    url('https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2') format('woff2');
+  font-display: swap; /* Ensures text is visible during font load */
+}
+
+/* Custom font for Michroma */
+@font-face {
+  font-family: 'Michroma';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Michroma'),
+    url('https://fonts.gstatic.com/s/michroma/v19/PN_zRfy9qWD8fEagAPg9pTn5_PDb.woff2') format('woff2');
+  font-display: swap; /* Ensures text is visible during font load */
+}
 
         * {
             padding: 0;
