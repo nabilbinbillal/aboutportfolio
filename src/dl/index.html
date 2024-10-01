@@ -349,12 +349,15 @@
 <br><br>
 I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science" target="_blank">Science</a> group at <a href="https://bgc.edu.bd/" target="_blank">Brahmanbaria Govt. College</a>
 <br><br>
+
+
+
 <div class="email-container" style="text-align: center; margin-top: 20px;">
   <p style="font-size: 18px; color: #fff;">
     If you'd like to collaborate or chat, feel free to reach me by 
     <a href="mailto:nabilbinbillal@gmail.com" style="color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase;">E-MAIL</a>.
   </p>
-  <div class="email-box" style="display: inline-block; padding: 15px 25px; border: 2px solid #000; border-radius: 5px; margin-top: 10px; background-color: #fff; font-size: 20px; color: #000; font-weight: bold;">
+  <div class="email-box" style="display: inline-block; padding: 15px 25px; border: 2px solid #000; border-radius: 5px; margin-top: 10px; background-color: #fff; font-size: 20px; color: #000; font-weight: bold; font-family: sans-serif;">
     nabilbinbillal@gmail.com
   </div>
   <button class="copy-button" id="copyButton" style="display: inline-block; margin-left: 10px; padding: 0.375em 1em; background-color: #f0f0f0; color: #242424; border: 0; border-radius: 0.5em; font-size: 1.35rem; font-weight: 600; text-shadow: 0 0.0625em 0 #fff; 
@@ -369,10 +372,20 @@ I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science"
 
   copyButton.addEventListener('click', function() {
     navigator.clipboard.writeText(emailText).then(function() {
-      copyButton.classList.add('glitch');
+      copyButton.textContent = 'Copied!';  // Change the button text to "Copied!"
       setTimeout(() => {
-        copyButton.classList.remove('glitch');
-      }, 300);
+        copyButton.textContent = 'Copy Email Address';  // Revert the button text back to "Copy Email Address" after 2 seconds
+      }, 2000);
+
+      const successMessage = document.createElement('p');
+      successMessage.textContent = 'Email Copied Successfully!';
+      successMessage.style.color = '#fff';
+      successMessage.style.marginTop = '10px';
+      document.querySelector('.email-container').appendChild(successMessage);
+
+      setTimeout(() => {
+        successMessage.remove();  // Remove the success message after 2 seconds
+      }, 2000);
     });
   });
 </script>
@@ -425,6 +438,12 @@ I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science"
     </div>
   </div>
 </footer>
+
+
+
+
+
+
   </div>
   </div>
   </div>
