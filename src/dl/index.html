@@ -138,14 +138,52 @@
 
                                     </nav>
                                     <div class="header__info">
-                                        <div class="js-header-date">Sep 29, 2024</div>
-                                        <div class="js-header-controls"></div>
-                                        <noscript>
-                                            <div role="button">CHANNEL 00</div>
-                                            <div class="js-space-trigger"></div>
+    <div class="js-header-date">Sep 29, 2024</div>
+    <div class="js-header-controls"></div>
+    <noscript>
+        <div role="button">CHANNEL 00</div>
+        <div class="js-space-trigger"></div>
+    </noscript>
+</div>
 
-                                        </noscript>
-                                    </div>
+<script>
+    // Include the JavaScript function and its logic here
+    function ee(e) {
+        let n, c, r, isActive = false;
+
+        return {
+            c() {
+                n = document.createElement("button");
+                n.textContent = "SPACE MODE";
+                n.classList.add("svelte-6brq6f", "visible-button");
+                n.addEventListener("click", () => {
+                    isActive = !isActive;
+                    n.classList.toggle("hovered", isActive);
+                });
+            },
+            m(t, e) {
+                const controls = document.querySelector('.js-header-controls');
+                if (controls) {
+                    controls.appendChild(n);
+                }
+                c || (r = n.addEventListener("click", () => { /* Click handler */ }), c = true);
+            },
+            p: t,
+            i: t,
+            o: t,
+            d(t) {
+                if (t) n.remove();
+                c = false;
+                r();
+            }
+        };
+    }
+
+    const app = ee();
+    app.c();
+    app.m(); // Optionally, you can specify where to insert
+</script>
+
                                 </div>
                             </header>
                             <div class="page-content" id="content" js-slot="content">
