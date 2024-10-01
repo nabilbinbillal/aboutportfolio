@@ -905,11 +905,6 @@ button.svelte-6brq6f.hovered {
     color: #ffffff; /* Change text color on hover */
 }
 
-/* Hover effect for the button */
-button.svelte-6brq6f.hover {
-    background-color: #484848; /* Dark background when hovered or active */
-    color: #ffffff; /* Change text color on hover */
-}
 /* Active state for button */
 button.svelte-6brq6f:active {
     transform: scale(0.95); /* Scale down slightly on click */
