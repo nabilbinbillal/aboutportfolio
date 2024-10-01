@@ -328,8 +328,8 @@
 
     <meta name="yandex-verification" content="296b91393da2610d" />
 
-
     <script>
+        // Web Font Loader Configuration
         WebFontConfig = {
             google: { families: ['Michroma'] }
         };
@@ -338,7 +338,7 @@
             var wf = document.createElement('script');
             wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
             wf.type = 'text/javascript';
-            wf.async = 'true';
+            wf.async = true;  // Load the script asynchronously
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(wf, s);
         })();
@@ -346,7 +346,6 @@
 
     <!-- Styles -->
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 
         * {
             padding: 0;
