@@ -903,9 +903,10 @@ button.svelte-6brq6f {
 /* Hover effect for the button */
 button.svelte-6brq6f:hover {
     opacity: 1;
-    background-color: #f0f0f0; /* Light gray background on hover */
+    background-color: #484848; /* Light gray background on hover */
     transform: scale(1.05); /* Slightly scale the button on hover */
-    color: #666; /* Change text color on hover */
+    color: #ffffff; /* Change text color on hover */
+    transition: 0.3s;
 }
 
 /* Active state for button */
