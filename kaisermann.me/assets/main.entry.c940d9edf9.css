@@ -904,6 +904,8 @@ button.svelte-6brq6f:hover {
     background-size: cover; /* Changed to cover for better fit */
     background-repeat: no-repeat;
     transform: scale(1.05); /* Slightly scale the button on hover */
+    color: #d8d8d8;
+
 }
 
 html.webp button.svelte-6brq6f:hover {
