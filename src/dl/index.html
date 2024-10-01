@@ -146,43 +146,7 @@
     </noscript>
 </div>
 
-<script>
-    // Include the JavaScript function and its logic here
-    function ee(e) {
-        let n, c, r, isActive = false;
 
-        return {
-            c() {
-                n = document.createElement("button");
-                n.textContent = "SPACE MODE";
-                n.classList.add("svelte-6brq6f", "visible-button");
-                n.addEventListener("click", () => {
-                    isActive = !isActive;
-                    n.classList.toggle("hovered", isActive);
-                });
-            },
-            m(t, e) {
-                const controls = document.querySelector('.js-header-controls');
-                if (controls) {
-                    controls.appendChild(n);
-                }
-                c || (r = n.addEventListener("click", () => { /* Click handler */ }), c = true);
-            },
-            p: t,
-            i: t,
-            o: t,
-            d(t) {
-                if (t) n.remove();
-                c = false;
-                r();
-            }
-        };
-    }
-
-    const app = ee();
-    app.c();
-    app.m(); // Optionally, you can specify where to insert
-</script>
 
                                 </div>
                             </header>
