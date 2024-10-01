@@ -883,7 +883,6 @@ button.svelte-zwh9ot:before{
     width:60px;
     height:60px
 }
-
 /* Base styles for the button */
 button.svelte-6brq6f {
     font-family: var(--font-primary);
@@ -901,12 +900,9 @@ button.svelte-6brq6f {
 }
 
 /* Hover effect for the button */
-button.svelte-6brq6f:hover {
-    opacity: 1;
-    background-color: #484848; /* Light gray background on hover */
-    transform: scale(1.05); /* Slightly scale the button on hover */
+button.svelte-6brq6f.hovered {
+    background-color: #484848; /* Dark background when hovered or active */
     color: #ffffff; /* Change text color on hover */
-    transition: 0.2s;
 }
 
 /* Active state for button */
