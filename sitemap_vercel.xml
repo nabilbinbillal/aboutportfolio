@@ -11,7 +11,7 @@
 
   <!-- Projects Page -->
   <url>
-    <loc>https://aboutnabil.pages.dev/projects.html</loc>
+    <loc>https://aboutnabil.vercel.app/projects.html</loc>
     <lastmod>2024-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
