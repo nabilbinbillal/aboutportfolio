@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Sitemap: https://aboutnabil.pages.dev/sitemap_pages.xml
+https://aboutnabil.vercel.app/sitemap_vercel.xml
