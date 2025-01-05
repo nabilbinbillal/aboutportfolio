@@ -2,20 +2,39 @@
 const themeToggle = document.querySelector('#theme-toggle');
 const body = document.body;
 
-// Check the saved theme in localStorage
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
-    themeToggle.checked = true;
-}
-
-// Toggle theme between light and dark
-themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
+// Function to apply the theme
+function applyTheme(theme) {
+    if (theme === 'dark') {
         body.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+        themeToggle.checked = true;
     } else {
         body.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
+        themeToggle.checked = false;
+    }
+}
+
+// Detect system theme
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Check saved theme in localStorage or fallback to system theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    applyTheme(savedTheme);
+} else {
+    applyTheme(systemTheme.matches ? 'dark' : 'light');
+}
+
+// Listen for manual theme toggle
+themeToggle.addEventListener('change', () => {
+    const newTheme = themeToggle.checked ? 'dark' : 'light';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+});
+
+// Listen for system theme changes in real time
+systemTheme.addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) { // Only auto-switch if no manual override
+        applyTheme(e.matches ? 'dark' : 'light');
     }
 });
 
@@ -23,8 +42,7 @@ themeToggle.addEventListener('change', () => {
 const faqs = document.querySelectorAll('.faq');
 
 faqs.forEach(faq => {
-    const question = faq.querySelector('h2');
-    question.addEventListener('click', () => {
+    faq.querySelector('h2').addEventListener('click', () => {
         faq.classList.toggle('open');
     });
 });
@@ -33,11 +51,9 @@ faqs.forEach(faq => {
 const socialIcons = document.querySelectorAll('.social-icon');
 
 socialIcons.forEach(icon => {
-    icon.addEventListener('click', function () {
+    icon.addEventListener('click', () => {
         const color = getComputedStyle(icon).backgroundColor;
         icon.style.boxShadow = `0 0 10px ${color}`;
-        
-        // Reset glow after 0.5s to avoid permanent glow
         setTimeout(() => {
             icon.style.boxShadow = 'none';
         }, 500);
@@ -45,10 +61,6 @@ socialIcons.forEach(icon => {
 });
 
 // Back to Home Button
-const backHomeButton = document.querySelector('.back-home');
-
-if (backHomeButton) {
-    backHomeButton.addEventListener('click', function () {
-        window.location.href = 'https://nabilbinbillal.github.io';
-    });
-}
+document.querySelector('.back-home').addEventListener('click', () => {
+    window.location.href = 'https://aboutnabil.pages.dev/';
+});
