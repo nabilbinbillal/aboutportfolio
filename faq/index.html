@@ -309,6 +309,9 @@
 
 
 
+
+
+
 <div class="theme-toggle">
     <label class="switch">
         <input type="checkbox" id="theme-toggle">
@@ -319,20 +322,65 @@
     </label>
 </div>
 
-
-
-
-
-
 <div class="gtranslate_wrapper" style="display: flex; justify-content: center; align-items: center;"></div>
+
 <script>
-    window.gtranslateSettings = {
+    // Initialize GTranslate settings for light theme
+    let lightThemeSettings = {
         "default_language": "en",
         "wrapper_selector": ".gtranslate_wrapper",
         "switcher_horizontal_position": "inline"
     };
+
+    let darkThemeSettings = {
+        "default_language": "en",
+        "wrapper_selector": ".gtranslate_wrapper",
+        "switcher_horizontal_position": "inline",
+        "switcher_text_color": "#f7f7f7",
+        "switcher_arrow_color": "#f2f2f2",
+        "switcher_border_color": "#161616",
+        "switcher_background_color": "#303030",
+        "switcher_background_shadow_color": "#474747",
+        "switcher_background_hover_color": "#3a3a3a",
+        "dropdown_text_color": "#eaeaea",
+        "dropdown_hover_color": "#748393",
+        "dropdown_background_color": "#474747"
+    };
+
+    // Function to initialize GTranslate
+    function initializeGTranslate(settings) {
+        window.gtranslateSettings = settings;
+        const script = document.createElement('script');
+        script.src = "https://cdn.gtranslate.net/widgets/latest/dwf.js";
+        script.defer = true;
+        document.body.appendChild(script);
+    }
+
+    // Initialize with light theme
+    initializeGTranslate(lightThemeSettings);
+
+    // Toggle theme based on checkbox
+    document.getElementById('theme-toggle').addEventListener('change', function () {
+        // Remove the existing GTranslate script
+        document.querySelectorAll('script[src*="gtranslate"]').forEach(script => script.remove());
+        
+        // Clear the wrapper content
+        document.querySelector('.gtranslate_wrapper').innerHTML = "";
+
+        // Initialize the appropriate theme
+        if (this.checked) {
+            initializeGTranslate(darkThemeSettings);
+        } else {
+            initializeGTranslate(lightThemeSettings);
+        }
+    });
 </script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+
+
+
+
+
+
 
 
 
