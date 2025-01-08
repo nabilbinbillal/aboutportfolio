@@ -324,8 +324,11 @@
 
 <div class="gtranslate_wrapper" style="display: flex; justify-content: center; align-items: center;"></div>
 
+
+
+
+
 <script>
-    // Light and dark theme settings
     const lightThemeSettings = {
         "default_language": "en",
         "wrapper_selector": ".gtranslate_wrapper",
@@ -347,35 +350,59 @@
         "dropdown_background_color": "#474747"
     };
 
-    // Function to initialize GTranslate with the current settings
     function initializeGTranslate(settings) {
         const currentLang = document.querySelector('.gtranslate_wrapper select')?.value || settings.default_language;
 
-        // Remove existing GTranslate script
         document.querySelectorAll('script[src*="gtranslate"]').forEach(script => script.remove());
-        
-        // Clear the wrapper content
         document.querySelector('.gtranslate_wrapper').innerHTML = "";
 
-        // Apply new settings
         window.gtranslateSettings = { ...settings, default_language: currentLang };
 
-        // Load the GTranslate widget script
         const script = document.createElement('script');
         script.src = "https://cdn.gtranslate.net/widgets/latest/dwf.js";
         script.defer = true;
         document.body.appendChild(script);
     }
 
-    // Initialize with light theme
-    initializeGTranslate(lightThemeSettings);
+    const themeToggle = document.querySelector('#theme-toggle');
+    const body = document.body;
 
-    // Handle theme toggle
-    document.getElementById('theme-toggle').addEventListener('change', function () {
-        const isDarkMode = this.checked;
-        initializeGTranslate(isDarkMode ? darkThemeSettings : lightThemeSettings);
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.add('dark');
+            themeToggle.checked = true;
+            initializeGTranslate(darkThemeSettings);
+        } else {
+            body.classList.remove('dark');
+            themeToggle.checked = false;
+            initializeGTranslate(lightThemeSettings);
+        }
+    }
+
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme(systemTheme.matches ? 'dark' : 'light');
+    }
+
+    themeToggle.addEventListener('change', () => {
+        const newTheme = themeToggle.checked ? 'dark' : 'light';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    systemTheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
     });
 </script>
+
+
+
 
 
 
