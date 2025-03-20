@@ -2,39 +2,20 @@
 const themeToggle = document.querySelector('#theme-toggle');
 const body = document.body;
 
-// Function to apply the theme
-function applyTheme(theme) {
-    if (theme === 'dark') {
+// Check saved theme in localStorage
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    themeToggle.checked = true;
+}
+
+// Toggle theme
+themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
         body.classList.add('dark');
-        themeToggle.checked = true;
+        localStorage.setItem('theme', 'dark');
     } else {
         body.classList.remove('dark');
-        themeToggle.checked = false;
-    }
-}
-
-// Detect system theme
-const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Check saved theme in localStorage or fallback to system theme
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    applyTheme(savedTheme);
-} else {
-    applyTheme(systemTheme.matches ? 'dark' : 'light');
-}
-
-// Listen for manual theme toggle
-themeToggle.addEventListener('change', () => {
-    const newTheme = themeToggle.checked ? 'dark' : 'light';
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-});
-
-// Listen for system theme changes in real time
-systemTheme.addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) { // Only auto-switch if no manual override
-        applyTheme(e.matches ? 'dark' : 'light');
+        localStorage.setItem('theme', 'light');
     }
 });
 
@@ -62,5 +43,5 @@ socialIcons.forEach(icon => {
 
 // Back to Home Button
 document.querySelector('.back-home').addEventListener('click', () => {
-    window.location.href = 'https://aboutnabil.pages.dev/';
+    window.location.href = 'https://nabilbinbillal.github.io';
 });
