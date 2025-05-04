@@ -321,23 +321,19 @@ I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science"
 <form id="form" style="background-color: #0f1117; padding: 30px; margin-top: 20px; border-radius: 16px; max-width: 600px; margin: 0 auto; box-shadow: 0 0 20px #0ff3ff44; font-family: 'Orbitron', sans-serif; color: #ffffff; width: 90%;">
   <div class="field" style="margin-bottom: 18px;">
     <label for="name" style="display: block; margin-bottom: 6px;">Name</label>
-    <input type="text" name="name" id="name" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;">
+    <input type="text" placeholder="Enter Your Name Here" name="name" id="name" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;">
   </div>
-  <div class="field" style="margin-bottom: 18px;">
-    <label for="time" style="display: block; margin-bottom: 6px;">Time</label>
-    <input type="text" name="time" id="time" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;">
+<div class="field" style="margin-bottom: 18px;">
+    <label for="title" style="display: block; margin-bottom: 6px;">Title</label>
+    <input type="text" placeholder="Your Message Topic" name="title" id="title" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;">
   </div>
   <div class="field" style="margin-bottom: 18px;">
     <label for="message" style="display: block; margin-bottom: 6px;">Message</label>
-    <textarea name="message" id="message" rows="4" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;"></textarea>
-  </div>
-  <div class="field" style="margin-bottom: 18px;">
-    <label for="title" style="display: block; margin-bottom: 6px;">Title</label>
-    <input type="text" name="title" id="title" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;">
+    <textarea name="message" id="message" placeholder="Type Your Message" rows="4" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;"></textarea>
   </div>
   <div class="field" style="margin-bottom: 18px;">
     <label for="email" style="display: block; margin-bottom: 6px;">Email</label>
-    <input type="text" name="email" id="email" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;">
+    <input type="text" placeholder="example@example.com" name="email" id="email" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #1c1f2b; color: #fff; box-shadow: 0 0 8px #007bff88;">
   </div>
 
   <input type="submit" id="button" value="Send" style="font-family: 'Orbitron', sans-serif; font-size: 16px; padding: 14px 28px; border: none; border-radius: 12px; color: #ffffff; background: linear-gradient(120deg, #1e1e2f, #007bff, #1e1e2f); background-size: 300% 100%; animation: futuristic-shine 4s linear infinite; box-shadow: 0 0 12px #007bffaa, 0 0 20px #007bff44 inset; cursor: pointer; transition: transform 0.2s, box-shadow 0.3s ease-in-out; text-shadow: 0 0 3px #00bfff;">
@@ -370,7 +366,12 @@ I am currently studying in the <a href="https://en.m.wikipedia.org/wiki/Science"
 
 
 
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script type="text/javascript">
+  emailjs.init('1PWC8JbjMVXZkdE6Z')
+</script>
 
 
 
